@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Payment Receipt</title>
+<style type="text/css">
+	table {border: 0;}
+	table td {padding: 10px;}
+</style>
+</head>
+<body>
+	<div align="center">
+		<h1>Payment Completed</h1>
+		<h2>Receipt Details</h2>
+		<table>
+			<tbody>
+				<tr>
+					<td>Merchant:</td>
+					<td>Java PayPal Inc.</td>
+				</tr>
+				<tr>
+					<td>Payer:</td>
+					<td th:text="${payer.firstName} + ${payer.lastName}"></td>
+				</tr>
+				<tr>
+					<td>Sub Total:</td>
+					<td th:text="${transaction.amount.details.subtotal}"></td>
+				</tr>
+				<tr>
+					<td>Shipping:</td>
+					<td th:text="${transaction.amount.details.shipping}"></td>
+				</tr>
+				<tr>
+					<td>Tax:</td>
+					<td th:text="${transaction.amount.details.tax}"></td>
+				</tr>
+				<tr>
+					<td>Total:</td>
+					<td th:text="${transaction.amount.total}"></td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+</body>
+</html>
